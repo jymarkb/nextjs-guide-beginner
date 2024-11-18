@@ -1,7 +1,8 @@
-export function randomNumber({params}:{params: {n: int}}){
-    return <i>{ Math.random()+ 1 }</i>;
+function randomNumber(count: number) {
+  return Math.random() + count;
 }
 
-export default function About(){
-    return <h1>About  this is generated randomly {randomNumber(1)}</h1>
+export default function About() {
+  const random = randomNumber(1);
+  return <h1>About this is generated randomly {random}</h1>;
 }

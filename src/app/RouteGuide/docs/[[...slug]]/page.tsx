@@ -1,6 +1,10 @@
 import { notFound } from "next/navigation";
 
-export default async function Docs({ params }: { params: { slug: string[] } }) {
+type Props = {
+  params : Promise <{slug: string[]}>
+}
+
+export default async function Docs({params}: Props) {
   const { slug } = await params;
 
   if (slug?.length > 5) {
