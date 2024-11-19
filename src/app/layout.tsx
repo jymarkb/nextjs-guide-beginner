@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { ThemeProvider } from "@/components/theme-provider";
 export const metadata: Metadata = {
   title: {
     absolute: "",
@@ -13,24 +14,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head>
-        <style>
-          {`
-            header, footer {
-              padding: 1rem;
-              background-color: #cccbbb;
-            }
-            a{
-              display:block
-            }
-          `}
-        </style>
-      </head>
+    <html lang="en" suppressHydrationWarning>
+      <head></head>
       <body>
-        <header>Main Header</header>
-        {children}
-        <footer>Main Footer</footer>
+        <header className="bg-gray-300">Main Header</header>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+
+        <footer className="bg-gray-300">Main Footer</footer>
       </body>
     </html>
   );
