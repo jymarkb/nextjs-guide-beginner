@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
+import { StrictMode } from "react";
 
 import Link from "next/link";
 import getDefaultTopNavigation from "./2-layout-demo/_navigation/navigation";
@@ -57,7 +58,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <StrictMode>{children}</StrictMode>
         </ThemeProvider>
 
         <footer className="mt-10 bg-gray-300">Main Footer</footer>
