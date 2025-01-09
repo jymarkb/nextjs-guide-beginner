@@ -11,3 +11,4 @@ yarn dev
 
 
 test commit add account fix
+add fix landing page
